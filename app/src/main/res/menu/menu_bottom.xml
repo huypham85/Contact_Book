@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/recentFragment"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:title="@string/action_recent" />
+    <item
+        android:id="@+id/contactFragment"
+        android:icon="@drawable/ic_contact_page_black_24dp"
+        android:title="@string/action_contact" />
+    <item
+        android:id="@+id/dialFragment"
+        android:icon="@drawable/ic_dialpad_black_24dp"
+        android:title="@string/action_dialpad" />
+</menu>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/contactFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_contact"
+        android:id="@+id/contactFragment"
+        android:name="com.example.contactbook.ContactFragment"
+        android:label="ContactFragment" />
+    <fragment
+        tools:layout="@layout/fragment_recent"
+        android:id="@+id/recentFragment"
+        android:name="com.example.contactbook.RecentFragment"
+        android:label="RecentFragment" />
+    <fragment
+        tools:layout="@layout/fragment_dial"
+        android:id="@+id/dialFragment"
+        android:name="com.example.contactbook.DialFragment"
+        android:label="DialFragment" />
+</navigation>

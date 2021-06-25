@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/contactFragment"
+    >
+    <TextView
+        android:id="@+id/txtContacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Contacts"
+        android:fontFamily="@font/mulish_extrabold"
+        android:textSize="28dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        />
+    <ImageButton
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txtContacts"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/ic_baseline_add_24"
+        />
+    <EditText
+        android:id="@+id/edtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtContacts"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:hint="Search"
+        android:fontFamily="@font/mulish_regular"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edtSearch"
+        android:layout_margin="10dp"
+        />
+
+
+</RelativeLayout>
