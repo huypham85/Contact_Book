@@ -9,7 +9,11 @@
         tools:layout="@layout/fragment_contact"
         android:id="@+id/contactFragment"
         android:name="com.example.contactbook.ContactFragment"
-        android:label="ContactFragment" />
+        android:label="ContactFragment" >
+        <action
+            android:id="@+id/action_contactFragment_to_addNewFragment"
+            app:destination="@id/addNewFragment" />
+    </fragment>
     <fragment
         tools:layout="@layout/fragment_recent"
         android:id="@+id/recentFragment"
@@ -20,4 +24,13 @@
         android:id="@+id/dialFragment"
         android:name="com.example.contactbook.DialFragment"
         android:label="DialFragment" />
+    <fragment
+        android:id="@+id/addNewFragment"
+        android:name="com.example.contactbook.AddNewFragment"
+        android:label="fragment_add_new"
+        tools:layout="@layout/fragment_add_new" >
+        <action
+            android:id="@+id/action_addNewFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
 </navigation>

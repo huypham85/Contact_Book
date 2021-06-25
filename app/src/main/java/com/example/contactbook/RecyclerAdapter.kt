@@ -7,18 +7,20 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(var userList:ArrayList<UserData>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.row_contact,parent,false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.itemName.text = userList[position].name
+        holder.itemPhone.text =userList[position].phone
+        userList[position].photo?.let { holder.itemImage.setImageResource(it) }
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return userList.size
     }
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var itemImage: ImageView

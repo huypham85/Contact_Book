@@ -25,6 +25,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toRightOf="@id/imgContact"
             android:text="Name"
+            android:textColor="@color/black"
             android:fontFamily="@font/mulish_bold"
             android:textSize="35dp"
             android:layout_marginStart="16dp"

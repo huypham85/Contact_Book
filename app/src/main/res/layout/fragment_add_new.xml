@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".AddNewFragment">
+
+    <ImageView
+        android:id="@+id/imgNew"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        />
+
+    <EditText
+        android:id="@+id/edt_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgNew"
+        android:layout_marginTop="40dp"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/edt_Phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_Name"
+        android:layout_marginTop="40dp"
+        android:hint="Phone"
+        />
+    <EditText
+        android:id="@+id/edt_Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_Phone"
+        android:layout_marginTop="40dp"
+        android:hint="E-mail"
+        />
+    <EditText
+        android:id="@+id/edt_Facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_Email"
+        android:layout_marginTop="40dp"
+        android:hint="Facebook"
+        />
+    <ImageButton
+        android:id="@+id/btn_addNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_Facebook"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_person_add_alt_black_24dp"
+        android:background="@android:color/transparent"
+        />
+
+</RelativeLayout>
