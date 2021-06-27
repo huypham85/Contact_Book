@@ -12,6 +12,7 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
+        android:src="@drawable/anh_kiet"
         />
 
     <EditText
@@ -29,6 +30,7 @@
         android:layout_below="@+id/edt_Name"
         android:layout_marginTop="40dp"
         android:hint="Phone"
+        android:inputType="number"
         />
     <EditText
         android:id="@+id/edt_Email"

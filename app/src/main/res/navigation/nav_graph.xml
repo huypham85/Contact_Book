@@ -13,6 +13,13 @@
         <action
             android:id="@+id/action_contactFragment_to_addNewFragment"
             app:destination="@id/addNewFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <argument
+            android:name="userData_new"
+            app:argType="com.example.contactbook.UserData"
+            />
     </fragment>
     <fragment
         tools:layout="@layout/fragment_recent"
@@ -32,5 +39,20 @@
         <action
             android:id="@+id/action_addNewFragment_to_contactFragment"
             app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.contactbook.InfoFragment"
+        android:label="InfoFragment"
+        tools:layout="@layout/fragment_info">
+        <action
+            android:id="@+id/action_infoFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+        <argument
+            android:name="userData_info"
+            app:argType="com.example.contactbook.UserData"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
     </fragment>
 </navigation>

@@ -2,7 +2,23 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ED1111"
     android:id="@+id/recentFragment">
-
+    <TextView
+        android:id="@+id/txtRecent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Recent"
+        android:fontFamily="@font/mulish_extrabold"
+        android:textSize="28dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_recent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtRecent"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp" />
 </RelativeLayout>

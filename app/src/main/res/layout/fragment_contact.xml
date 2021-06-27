@@ -25,8 +25,8 @@
         android:src="@drawable/ic_baseline_add_24"
         android:background="@android:color/transparent"
         />
-    <EditText
-        android:id="@+id/edtSearch"
+    <SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtContacts"
@@ -34,13 +34,14 @@
         android:layout_margin="10dp"
         android:hint="Search"
         android:fontFamily="@font/mulish_regular"
+        android:background="@drawable/bg_search_view"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_contacts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/edtSearch"
+        android:layout_below="@id/searchView"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp" />
 
