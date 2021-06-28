@@ -4,15 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="30dp"
-    tools:context=".AddNewFragment">
-
-    <ImageButton
-        android:id="@+id/btn_back_addNew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_arrow_back_ios_new_black_24dp"
-        />
+    android:padding="20dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_photo"
@@ -22,7 +14,7 @@
         app:cardCornerRadius="10dp"
         >
         <ImageView
-            android:id="@+id/imgNew"
+            android:id="@+id/imgUpdateNew"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
@@ -32,9 +24,8 @@
     </androidx.cardview.widget.CardView>
 
 
-
     <EditText
-        android:id="@+id/edt_Name"
+        android:id="@+id/edt_UpdateName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/card_photo"
@@ -42,39 +33,29 @@
         android:hint="Name" />
 
     <EditText
-        android:id="@+id/edt_Phone"
+        android:id="@+id/edt_UpdatePhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edt_Name"
+        android:layout_below="@+id/edt_UpdateName"
         android:layout_marginTop="40dp"
         android:hint="Phone"
         android:inputType="number"
         />
     <EditText
-        android:id="@+id/edt_Email"
+        android:id="@+id/edt_UpdateEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edt_Phone"
+        android:layout_below="@id/edt_UpdatePhone"
         android:layout_marginTop="40dp"
         android:hint="E-mail"
         />
     <EditText
-        android:id="@+id/edt_Facebook"
+        android:id="@+id/edt_UpdateFacebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edt_Email"
+        android:layout_below="@+id/edt_UpdateEmail"
         android:layout_marginTop="40dp"
         android:hint="Facebook"
-        />
-    <ImageButton
-        android:id="@+id/btn_addNew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edt_Facebook"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_person_add_alt_black_24dp"
-        android:background="@android:color/transparent"
         />
 
 </RelativeLayout>

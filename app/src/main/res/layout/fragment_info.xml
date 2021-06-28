@@ -22,17 +22,26 @@
             android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_arrow_back_ios_new_black_24dp" />
-        <ImageView
-            android:id="@+id/img_info"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="10dp"
+            >
+            <ImageView
+                android:id="@+id/img_info"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                />
+        </androidx.cardview.widget.CardView>
+
         <TextView
             android:id="@+id/txt_name_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/img_info"
+            android:layout_below="@id/card_photo"
             android:layout_centerHorizontal="true"
             android:text="Name"
             android:fontFamily="@font/mulish_extrabold"

@@ -32,7 +32,6 @@
         android:layout_below="@id/txtContacts"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:hint="Search"
         android:fontFamily="@font/mulish_regular"
         android:background="@drawable/bg_search_view"
         />

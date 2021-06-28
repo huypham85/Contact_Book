@@ -1,5 +1,7 @@
 package com.example.contactbook
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -36,6 +38,11 @@ class InfoFragment : Fragment() {
         binding.txtEmailInfo.text = user.email
         binding.txtFbInfo.text = user.facebook
         user.photo?.let { binding.imgInfo.setImageResource(it) }
+//        binding.imgPhoneInfo.setOnClickListener{
+//            val number = binding.txtPhoneInfo.text.toString().trim()
+//            val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:"+ Uri.encode(number)))
+//            startActivity(intent)
+//        }
         return view
     }
 
