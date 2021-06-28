@@ -1,61 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="20dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        app:cardCornerRadius="10dp"
-        >
-        <ImageView
-            android:id="@+id/imgUpdateNew"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/anh_kiet"
+            app:cardCornerRadius="10dp"
+            >
+            <ImageView
+                android:id="@+id/imgUpdateNew"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_baseline_person_24"
+                />
+        </androidx.cardview.widget.CardView>
+
+
+        <EditText
+            android:id="@+id/edt_UpdateName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card_photo"
+            android:layout_marginTop="40dp"
+            android:hint="Name" />
+
+        <EditText
+            android:id="@+id/edt_UpdatePhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_UpdateName"
+            android:layout_marginTop="40dp"
+            android:hint="Phone"
+            android:inputType="number"
             />
-    </androidx.cardview.widget.CardView>
+        <EditText
+            android:id="@+id/edt_UpdateEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt_UpdatePhone"
+            android:layout_marginTop="40dp"
+            android:hint="E-mail"
+            />
+        <EditText
+            android:id="@+id/edt_UpdateFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_UpdateEmail"
+            android:layout_marginTop="40dp"
+            android:hint="Facebook"
+            />
 
-
-    <EditText
-        android:id="@+id/edt_UpdateName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/card_photo"
-        android:layout_marginTop="40dp"
-        android:hint="Name" />
-
-    <EditText
-        android:id="@+id/edt_UpdatePhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edt_UpdateName"
-        android:layout_marginTop="40dp"
-        android:hint="Phone"
-        android:inputType="number"
-        />
-    <EditText
-        android:id="@+id/edt_UpdateEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edt_UpdatePhone"
-        android:layout_marginTop="40dp"
-        android:hint="E-mail"
-        />
-    <EditText
-        android:id="@+id/edt_UpdateFacebook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edt_UpdateEmail"
-        android:layout_marginTop="40dp"
-        android:hint="Facebook"
-        />
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

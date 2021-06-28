@@ -1,6 +1,7 @@
 package com.example.contactbook
 
 import android.app.AlertDialog
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,9 @@ class RecyclerAdapter(var userList:ArrayList<UserData>, val getData:(UserData)->
     val initUserDataList = ArrayList<UserData>().apply {
         userList.addAll(this)
     }
-
+    init {
+        Log.d("Init List", initUserDataList.size.toString())
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.row_contact,parent,false)
         return ViewHolder(v)
@@ -45,6 +48,7 @@ class RecyclerAdapter(var userList:ArrayList<UserData>, val getData:(UserData)->
             }
             else{
                 val query = constraint.toString().trim().toLowerCase()
+                Log.d("Result", initUserDataList.size.toString())
                 initUserDataList.forEach{
                     if(it.name.toLowerCase(Locale.ROOT).contains(query)){
                         filteredList.add(it)

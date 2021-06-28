@@ -26,7 +26,7 @@ class AddNewFragment : Fragment() {
             val userPhone: String = binding.edtPhone.text.toString().trim()
             val userEmail: String = binding.edtEmail.text.toString().trim()
             val userFb: String = binding.edtFacebook.text.toString().trim()
-            var userPhoto: Int = R.drawable.anh_kiet
+            var userPhoto: Int = R.drawable.ic_baseline_person_24
             if(userName!=""&&userEmail!=""&&userPhone!=""&&userFb!="") {
                 val bundle = Bundle()
                 val userNew = UserData(userName, userPhone, userEmail, userFb, userPhoto)
@@ -34,7 +34,7 @@ class AddNewFragment : Fragment() {
                 Navigation.findNavController(view).navigate(R.id.action_addNewFragment_to_contactFragment, bundle)
             }
             else{
-                Toast.makeText(activity, "User's detail is not completed", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, "User's Information is not completed", Toast.LENGTH_LONG).show()
             }
         }
         binding.btnBackAddNew.setOnClickListener {

@@ -1,5 +1,6 @@
 package com.example.contactbook
 
+import android.os.Binder
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,12 +12,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.contactbook.databinding.FragmentContactBinding
 import java.util.*
 import kotlin.collections.ArrayList
 
 class ContactFragment: Fragment() {
-    private lateinit var userList: MutableList<UserData>
+    private lateinit var userList: ArrayList<UserData>
     private lateinit var contactAdapter: RecyclerAdapter
+    private lateinit var binding : FragmentContactBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -26,42 +29,29 @@ class ContactFragment: Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_contact,container,false)
+        binding = FragmentContactBinding.inflate(inflater,container,false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         userList = (activity as MainActivity).mainListUser
-        val recyclerView:RecyclerView= view.findViewById(R.id.rcv_contacts)
+        val recyclerView:RecyclerView= binding.rcvContacts
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
         contactAdapter = RecyclerAdapter(userList as ArrayList<UserData>, {
+
             val bundle = Bundle()
             bundle.putSerializable("user_data", it)
             Log.d("Send data", it.toString())
             Navigation.findNavController(view).navigate(R.id.action_contactFragment_to_infoFragment,bundle) // truyen bundle theo khi chuyen fragment
         })
         recyclerView.adapter= contactAdapter
+        Log.d("User List init", userList.size.toString())
 
-        //search view
-        val searchView = view.findViewById<SearchView>(R.id.searchView)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                searchView.clearFocus()
-                if(userList.contains(query)){
-                    contactAdapter.getFilter().filter(query)
-                }
-                return true
-            }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                contactAdapter.getFilter().filter(newText)
-                return true
-            }
-
-        })
-
-        val btnAdd = view.findViewById<ImageButton>(R.id.btn_add)
+        val btnAdd = binding.btnAdd
         btnAdd.setOnClickListener{
             Navigation.findNavController(view).navigate(R.id.action_contactFragment_to_addNewFragment)
         }
@@ -77,7 +67,25 @@ class ContactFragment: Fragment() {
             userList.sortBy { it.name }
             contactAdapter.notifyDataSetChanged()
         }
+
+        //search view
+        val searchView = binding.searchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener, androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                contactAdapter.getFilter().filter(query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                contactAdapter.getFilter().filter(newText)
+                return true
+            }
+
+        })
+
     }
+
+
 
 //    override fun onPause() {
 //        super.onPause()
