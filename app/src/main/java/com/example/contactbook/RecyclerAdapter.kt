@@ -15,7 +15,9 @@ import kotlin.collections.ArrayList
 
 class RecyclerAdapter(var userList:ArrayList<UserData>, val getData:(UserData)->Unit): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     val initUserDataList = ArrayList<UserData>().apply {
-        userList.addAll(this)
+        userList?.let{
+            addAll(it)
+        }
     }
     init {
         Log.d("Init List", initUserDataList.size.toString())

@@ -17,7 +17,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class ContactFragment: Fragment() {
-    private lateinit var userList: ArrayList<UserData>
+    //private lateinit var userList: ArrayList<UserData>
     private lateinit var contactAdapter: RecyclerAdapter
     private lateinit var binding : FragmentContactBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,11 +36,11 @@ class ContactFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        userList = (activity as MainActivity).mainListUser
+        //userList = (activity as MainActivity).mainListUser
         val recyclerView:RecyclerView= binding.rcvContacts
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
-        contactAdapter = RecyclerAdapter(userList as ArrayList<UserData>, {
+        contactAdapter = RecyclerAdapter((activity as MainActivity).mainListUser, {
 
             val bundle = Bundle()
             bundle.putSerializable("user_data", it)
@@ -48,7 +48,7 @@ class ContactFragment: Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_contactFragment_to_infoFragment,bundle) // truyen bundle theo khi chuyen fragment
         })
         recyclerView.adapter= contactAdapter
-        Log.d("User List init", userList.size.toString())
+        Log.d("User List init",(activity as MainActivity).mainListUser.size.toString())
 
 
         val btnAdd = binding.btnAdd
@@ -63,8 +63,8 @@ class ContactFragment: Fragment() {
         }
 
         newUser?.let {
-            userList.add(it)
-            userList.sortBy { it.name }
+            (activity as MainActivity).mainListUser.add(it)
+            (activity as MainActivity).mainListUser.sortBy { it.name }
             contactAdapter.notifyDataSetChanged()
         }
 
