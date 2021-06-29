@@ -17,9 +17,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     val mainListUser = ArrayList<UserData>() // goi list user de duy tri du lieu
     init {
-        mainListUser.add(UserData("Mr Thanh", "0987", "alo@123", "fb.com", R.drawable.anh_thanh ))
+        mainListUser.add(UserData("Mr Thanh", "0987", "alo@123", "fb.com", R.drawable.anhthanh ))
         mainListUser.add(UserData("Mr Kiet", "09871", "alo@1234", "fb.com", R.drawable.anh_kiet ))
-        mainListUser.add(UserData("Ms Mai", "09872", "alo@1235", "fb.com", R.drawable.chi_mai ))
+        mainListUser.add(UserData("Ms Mai", "09872", "alo@1235", "fb.com", R.drawable.chimai ))
     }
 
 //    private var layoutManager: RecyclerView.LayoutManager? =null
