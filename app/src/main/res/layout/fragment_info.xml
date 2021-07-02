@@ -166,6 +166,11 @@
                     android:textSize="20dp" />
             </RelativeLayout>
         </LinearLayout>
-
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
     </RelativeLayout>
+
 </ScrollView>

@@ -40,6 +40,10 @@ class AddNewFragment : Fragment() {
         binding.btnBackAddNew.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_addNewFragment_to_contactFragment)
         }
+        arguments?.let {
+            var newUserNumber = it.getString("new_user_number").toString()
+            binding.edtPhone.setText(newUserNumber.trim())
+        }
         return view
     }
 }

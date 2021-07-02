@@ -25,12 +25,20 @@
         tools:layout="@layout/fragment_recent"
         android:id="@+id/recentFragment"
         android:name="com.example.contactbook.RecentFragment"
-        android:label="RecentFragment" />
+        android:label="RecentFragment" >
+        <action
+            android:id="@+id/action_recentFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
     <fragment
         tools:layout="@layout/fragment_dial"
         android:id="@+id/dialFragment"
         android:name="com.example.contactbook.DialFragment"
-        android:label="DialFragment" />
+        android:label="DialFragment" >
+        <action
+            android:id="@+id/action_dialFragment_to_addNewFragment"
+            app:destination="@id/addNewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addNewFragment"
         android:name="com.example.contactbook.AddNewFragment"
@@ -54,5 +62,8 @@
             app:nullable="true"
             android:defaultValue="@null"
             />
+        <action
+            android:id="@+id/action_infoFragment_to_recentFragment"
+            app:destination="@id/recentFragment" />
     </fragment>
 </navigation>

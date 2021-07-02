@@ -41,7 +41,6 @@ class ContactFragment: Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
         contactAdapter = RecyclerAdapter((activity as MainActivity).mainListUser, {
-
             val bundle = Bundle()
             bundle.putSerializable("user_data", it)
             Log.d("Send data", it.toString())
